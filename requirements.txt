@@ -1,4 +1,4 @@
-Pyrogram -U
+http://github.com/pyrogram/pyrogram
 TgCrypto
 ffmpeg-python
 psutil
