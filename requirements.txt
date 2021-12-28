@@ -8,5 +8,5 @@ youtube_search_python
 youtube_search
 wget
 requests
-py-tgcalls[pyrogram]
-pytgcalls[pyrogram]
+py-tgcalls
+pytgcalls
