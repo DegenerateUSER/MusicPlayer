@@ -1,4 +1,4 @@
-Pyrogram
+Pyrogram -U
 TgCrypto
 ffmpeg-python
 psutil
