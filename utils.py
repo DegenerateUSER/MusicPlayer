@@ -23,6 +23,7 @@ try:
     import os
     import subprocess
     import sys
+    from pytgcalls.exceptions import GroupCallNotFoundError
     from config import Config
     import ffmpeg
     from pyrogram import emoji
@@ -308,7 +309,17 @@ class MusicPlayer(object):
             await sleep(e.x)
             if not group_call.is_connected:
                 await group_call.start(CHAT, enable_action=False)
-     
+        except GroupCallNotFoundError:
+            try:
+
+                await USER.send(CreateGroupCall(
+                    peer=(await USER.resolve_peer(CHAT)),
+                    random_id=randint(10000, 999999999)
+                    )
+                    )
+                await group_call.start(CHAT, enable_action=False)
+            except Exception as e:
+                print(e)
                 pass
         except Exception as e:
             print(e)
